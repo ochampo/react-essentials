@@ -1,6 +1,7 @@
 
 import './App.css';
 
+
 function Header (props)
 {
 
@@ -45,17 +46,22 @@ const benefitsOfFunctionalCode = [
   const ObjectsOfBenefitsOfFunctional = benefitsOfFunctionalCode.map((benefitsOfFunctionalCode,i) => ({id:i, title: benefitsOfFunctionalCode}))
   //console.log(ObjectsOfBenefitsOfFunctional)
 
+
+function secretTest(){
+
+  return <h1> test </h1>
+}
+
+function viewable()
+{
+return <h1>test visable for anyone</h1>
+
+}
+
 function App() {
-  return (
-    <div className="App">
-      <Header name="Daniel" />
-      <Main adjective = "The benefit of functional code is " benefitsOfFunctionalCode={ObjectsOfBenefitsOfFunctional} />
-      <Footer year = {new Date().getFullYear()} />
-      
-      
-      
-    </div>
-  );
+  return <div className= "App"> Components here someday</div>
+    
+  
 }
 
 export default App;
