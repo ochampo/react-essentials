@@ -1,65 +1,39 @@
-
+import React ,{useState, useEffect} from "react";
 import './App.css';
 
 
-function Header (props)
-{
 
-  return(
-    <header>
-      <h1>{props.name} Testing</h1>
-    </header>
-  );
-}
-
-function Main(props){
-
-  return (
-<section>
-
-  <p style={{textAlign: "left"}} >{props.adjective} </p>
-  <ul style={{textAlign: "left"}}>
-  {props.benefitsOfFunctionalCode.map((benefitsOfFunctionalCode) =>(
-  
-  <li key={benefitsOfFunctionalCode.id}>{benefitsOfFunctionalCode.title}</li>
-  ))}
-  </ul>
-</section>
-  );
-}
-function Footer(props){
-
-  return (
-<section>
-
-  <footer>Copyright {props.year} </footer>
-</section>
-  )
-}
-
-const benefitsOfFunctionalCode = [
-  "Cleaner Code",
-  "makes debugging easier",
-  "Dynamic"
-  ];
-
-  const ObjectsOfBenefitsOfFunctional = benefitsOfFunctionalCode.map((benefitsOfFunctionalCode,i) => ({id:i, title: benefitsOfFunctionalCode}))
-  //console.log(ObjectsOfBenefitsOfFunctional)
-
-
-function secretTest(){
-
-  return <h1> test </h1>
-}
-
-function viewable()
-{
-return <h1>test visable for anyone</h1>
-
-}
 
 function App() {
-  const [emtion ]
+  const [emotion, setEmotion] = useState("Happy");
+  const [secondary, setSecondary] = useState("Sleepy");
+
+  useEffect (() => {
+
+console.log(`It's ${emotion} arround here!`);
+
+  },[emotion]);
+
+  
+  useEffect (() => {
+
+    console.log(`It's ${secondary} arround here!`);
+    
+      },[secondary]);
+  return(
+<>
+ <h1>current emotion is {emotion}, and {secondary}.</h1>
+<button onClick={()=> setEmotion("Happy")}>Happy</button>
+<button onClick={()=> setEmotion("fustrated")}>Fustrate</button>
+<button onClick={()=> setEmotion("Eaze")}>Eaze</button>
+<button onClick={()=> setEmotion("Enthusiastic")}>Enthuse</button>
+<button onClick={()=> setSecondary("Cranky")}>Cranky</button>
+
+</>
+
+);
+  
+  //[emtion, setEmotion ] = useState();
   
   
 }
